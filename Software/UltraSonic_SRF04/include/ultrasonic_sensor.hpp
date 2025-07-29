@@ -13,7 +13,7 @@ enum class Unit {
 
 /**
  * @class UltrasonicSensor
- * @brief Class for interfacing with SRF04 ultrasonic distance sensor
+ * @brief Class for interfacing with the SRF04 ultrasonic distance sensor
  */
 class UltrasonicSensor {
 public:
@@ -60,6 +60,18 @@ private:
      * @return Echo duration in microseconds. Returns -1 if timeout occurs.
      */
     long measurePulseDuration() const;
+
+    /**
+     * @brief Custom blocking delay function for microseconds
+     * @param delayUs Desired delay time in microseconds
+     */
+    static void delay_us(uint32_t delayUs);
+
+    /**
+     * @brief Custom blocking delay function for milliseconds
+     * @param delayMs Desired delay time in milliseconds
+     */
+    static void delay_ms(uint32_t delayMs);
 };
 
 #endif // ULTRASONIC_SENSOR_HPP
